@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prévias da Melissa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #e65c00;
+      margin-top: 24px;
+    }
+
+    h2 {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 24px;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .midias {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .card img, .card video {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .card video {
+      outline: none;
+    }
+
+    .exclusive {
+      background-color: #fff4e6;
+      padding: 24px;
+      margin: 32px 0;
+      border-radius: 12px;
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .exclusive h3 {
+      color: #e65c00;
+      margin-bottom: 8px;
+    }
+
+    .exclusive p {
+      margin-bottom: 16px;
+    }
+
+    .exclusive .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .exclusive .buttons button {
+      border: none;
+      color: white;
+      padding: 14px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+    }
+
+    .btn-telegram {
+      background-color: #0088cc;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Prévias da Amandinha</h1>
+  <h2>É SÓ CLICAR NA FOTO OU NO VÍDEO QUE ELE FICA GRANDE AMOR</h2>
+
+  <div class="midias">
+    <div class="card">
+      <img src="https://via.placeholder.com/500x300?text=Foto+1" alt="Foto 1">
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/500x300?text=Foto+2" alt="Foto 2">
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/500x300?text=Foto+3" alt="Foto 3">
+    </div>
+    <div class="card">
+      <video controls src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+    </div>
+    <div class="card">
+      <video controls src="https://www.w3schools.com/html/movie.mp4"></video>
+    </div>
+  </div>
+
+  <div class="exclusive">
+    <h3>Conteúdo Exclusivo</h3>
+    <p>Adquira agora meu conteúdo! É lá que a coisa fica séria!</p>
+    <div class="buttons">
+      <button class="btn-whatsapp" onclick="window.location.href='https://wa.me/5599999999999'">COMPRAR NO WHATSAPP</button>
+      <button class="btn-telegram" onclick="window.location.href='https://t.me/seutelegram'">COMPRAR NO TELEGRAM</button>
+    </div>
+  </div>
+</body>
+</html>
