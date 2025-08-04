@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prévias da Melissa</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
+    fbq('init', '1402106630879240');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1402106630879240&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
     body {
       margin: 0;
@@ -126,11 +146,9 @@
     <h3>Chamadas ao vivo e Pacote de conteúdos</h3>
     <p>Compra meu conteúdo pelo whatsapp ou Telegram amor! É lá que a coisa fica gostosa!</p>
     <div class="buttons">
-      <button class="btn-whatsapp" onclick="window.location.href='https://mais.red/run/20996'">COMPRAR NO WHATSAPP</button>
+      <button class="btn-whatsapp" onclick="fbq('track', 'Lead'); window.location.href='https://mais.red/run/20996'">COMPRAR NO WHATSAPP</button>
       <button class="btn-telegram" onclick="window.location.href='https://t.me/botdamelissa_bot'">COMPRAR NO TELEGRAM</button>
     </div>
   </div>
 </body>
 </html>
-
-
