@@ -23,7 +23,6 @@
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1402106630879240&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Meta Pixel Code -->
 
   <style>
     body {
@@ -34,11 +33,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     h1 {
       color: #ff66b2;
       margin-top: 24px;
+      font-size: 24px;
+      text-align: center;
     }
 
     h2 {
@@ -61,10 +65,18 @@
       width: 100%;
       border-radius: 12px;
       object-fit: cover;
+      pointer-events: none; /* bloqueia interação */
+      user-select: none;
+      -webkit-user-drag: none;
+      touch-action: none;
     }
 
-    .card video {
-      outline: none;
+    video::-internal-media-controls-download-button {
+      display: none !important;
+    }
+
+    video::--webkit-media-controls-enclosure {
+      overflow: hidden !important;
     }
 
     .exclusive {
@@ -100,6 +112,7 @@
       border-radius: 8px;
       cursor: pointer;
       width: 100%;
+      transition: 0.3s;
     }
 
     .btn-whatsapp {
@@ -110,6 +123,10 @@
       background-color: #0088cc;
     }
 
+    .hidden {
+      display: none !important;
+    }
+
     @media (max-width: 480px) {
       h1 {
         font-size: 20px;
@@ -117,9 +134,61 @@
       h2 {
         font-size: 13px;
       }
+
+      .exclusive p {
+        font-size: 14px;
+      }
+
+      .exclusive .buttons button {
+        font-size: 15px;
+      }
     }
   </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const whatsappBtn = document.querySelector('.btn-whatsapp');
+      const storageKey = 'whatsappBlockedUntil';
+      const now = Date.now();
+      const blockUntil = localStorage.getItem(storageKey);
+
+      if (blockUntil && now < parseInt(blockUntil)) {
+        hideWhatsappButton();
+      }
+
+      whatsappBtn.addEventListener('click', function (e) {
+        fbq('track', 'Lead');
+        
+        // Esconde o botão
+        hideWhatsappButton();
+
+        // Define bloqueio por 48h
+        const blockTime = Date.now() + 48 * 60 * 60 * 1000;
+        localStorage.setItem(storageKey, blockTime);
+
+        // Redireciona
+        setTimeout(() => {
+          window.location.href = 'https://mais.red/run/20996';
+        }, 100);
+      });
+
+      function hideWhatsappButton() {
+        if (whatsappBtn) {
+          whatsappBtn.classList.add('hidden');
+        }
+      }
+    });
+
+    // Bloqueia botão direito e toque longo (mobile)
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('touchstart', e => {
+      if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  </script>
 </head>
+
 <body>
   <h1>Presentinhos da Melissa</h1>
   <h2></h2>
@@ -146,7 +215,7 @@
     <h3>Chamadas ao vivo e Pacote de conteúdos</h3>
     <p>Meu conteúdo é comprado pelo Whatsapp ou Telegram amor! É lá que a coisa fica gostosa!</p>
     <div class="buttons">
-      <button class="btn-whatsapp" onclick="fbq('track', 'Lead'); window.location.href='https://mais.red/run/20996'">COMPRAR NO WHATSAPP</button>
+      <button class="btn-whatsapp">COMPRAR NO WHATSAPP</button>
       <button class="btn-telegram" onclick="window.location.href='https://t.me/botdamelissa_bot'">COMPRAR NO TELEGRAM</button>
     </div>
   </div>
