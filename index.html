@@ -78,12 +78,15 @@
     }
 
     .exclusive h3 {
-      color: #ff66b2;
-      margin-bottom: 8px;
+      color: #ff3399;
+      font-size: 22px;
+      font-weight: bold;
     }
 
     .exclusive p {
-      margin-bottom: 16px;
+      font-size: 16px;
+      color: #444;
+      margin: 16px 0;
     }
 
     .exclusive .buttons {
@@ -96,18 +99,32 @@
       border: none;
       color: white;
       padding: 14px 24px;
-      font-size: 16px;
-      border-radius: 8px;
+      font-size: 17px;
+      border-radius: 10px;
       cursor: pointer;
       width: 100%;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background-color 0.3s ease;
     }
 
     .btn-whatsapp {
       background-color: #25D366;
     }
 
+    .btn-whatsapp:hover {
+      background-color: #1ebe5d;
+    }
+
     .btn-telegram {
       background-color: #0088cc;
+    }
+
+    .btn-telegram:hover {
+      background-color: #0075b0;
     }
 
     @media (max-width: 480px) {
@@ -153,11 +170,15 @@
   </div>
 
   <div class="exclusive">
-    <h3>Chamadas ao vivo e Pacote de conteúdos</h3>
-    <p>Meu conteúdo é comprado pelo Whatsapp ou Telegram amor! É lá que a coisa fica gostosa!</p>
+    <h3>💖 Chamadas ao Vivo + Pacotão de Conteúdos 💖</h3>
+    <p>Meu conteúdo é vendido exclusivamente pelo <strong>WhatsApp</strong> ou <strong>Telegram</strong>, amor!<br>É lá que a brincadeira começa de verdade 😈🔥</p>
     <div class="buttons">
-      <button class="btn-whatsapp" onclick="fbq('track', 'Lead'); window.location.href='https://mais.red/run/20996'">COMPRAR NO WHATSAPP</button>
-      <button class="btn-telegram" onclick="window.location.href='https://t.me/botdamelissa_bot'">COMPRAR NO TELEGRAM</button>
+      <button class="btn-whatsapp" onclick="fbq('track', 'Lead'); window.location.href='https://mais.red/run/20996'">
+        💬 COMPRAR NO WHATSAPP
+      </button>
+      <button class="btn-telegram" onclick="window.location.href='https://t.me/botdamelissa_bot'">
+        📩 COMPRAR NO TELEGRAM
+      </button>
     </div>
   </div>
 </body>
